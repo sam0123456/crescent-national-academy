@@ -2269,14 +2269,16 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .whatsapp-floating-widget {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1000;
+  bottom: 28px;
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  right: 28px;
+  right: calc(28px + env(safe-area-inset-right, 0px));
+  z-index: 9999;
 }
 
 .whatsapp-btn-trigger {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
   color: #ffffff;
@@ -2285,22 +2287,23 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   cursor: pointer;
   position: relative;
+  box-sizing: border-box;
   transition: all var(--transition-smooth);
   animation: waPulse 2.5s infinite;
 }
 
 @keyframes waPulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65), 0 8px 24px rgba(37, 211, 102, 0.45);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 6px 18px rgba(37, 211, 102, 0.35);
   }
   70% {
-    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.45);
+    box-shadow: 0 0 0 8px rgba(37, 211, 102, 0), 0 6px 18px rgba(37, 211, 102, 0.35);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.45);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 6px 18px rgba(37, 211, 102, 0.35);
   }
 }
 
@@ -2348,7 +2351,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   visibility: hidden;
   transition: all var(--transition-smooth);
-  z-index: 1001;
+  z-index: 10001;
 }
 
 .whatsapp-chat-popup.open {
@@ -2832,8 +2835,11 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Floating WhatsApp Widget Mobile */
   .whatsapp-floating-widget {
-    bottom: 18px;
-    right: 18px;
+    bottom: 22px;
+    bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+    right: 22px;
+    right: calc(22px + env(safe-area-inset-right, 0px));
+    z-index: 9999;
   }
 
   .whatsapp-tooltip {
@@ -2841,19 +2847,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .whatsapp-btn-trigger {
-    width: 54px;
-    height: 54px;
-    font-size: 1.7rem;
+    width: 52px;
+    height: 52px;
+    font-size: 1.65rem;
+    box-sizing: border-box;
   }
 
   .whatsapp-chat-popup {
     position: fixed;
-    width: calc(100vw - 32px);
-    max-width: 340px;
-    right: 16px;
-    bottom: 80px;
-    max-height: calc(100vh - 100px);
+    width: calc(100vw - 44px);
+    max-width: 320px;
+    right: 22px;
+    bottom: 84px;
+    max-height: calc(100vh - 110px);
     overflow-y: auto;
+    z-index: 10001;
   }
 
   .tabs-nav {
