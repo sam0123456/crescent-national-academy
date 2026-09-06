@@ -2271,7 +2271,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  z-index: 998;
+  z-index: 1000;
 }
 
 .whatsapp-btn-trigger {
@@ -2289,6 +2289,19 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   position: relative;
   transition: all var(--transition-smooth);
+  animation: waPulse 2.5s infinite;
+}
+
+@keyframes waPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65), 0 8px 24px rgba(37, 211, 102, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.45);
+  }
 }
 
 .whatsapp-btn-trigger:hover {
@@ -2325,15 +2338,17 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 75px;
   right: 0;
   width: 330px;
+  max-height: 82vh;
   background: #ffffff;
   border-radius: var(--radius-xl);
-  box-shadow: 0 20px 45px rgba(5, 29, 20, 0.25);
+  box-shadow: 0 20px 45px rgba(5, 29, 20, 0.28);
   border: 1.5px solid var(--border-gold);
   overflow: hidden;
   transform: scale(0.85) translateY(20px);
   opacity: 0;
   visibility: hidden;
   transition: all var(--transition-smooth);
+  z-index: 1001;
 }
 
 .whatsapp-chat-popup.open {
@@ -2817,20 +2832,28 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Floating WhatsApp Widget Mobile */
   .whatsapp-floating-widget {
-    bottom: 16px;
-    right: 16px;
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .whatsapp-tooltip {
+    display: none !important;
   }
 
   .whatsapp-btn-trigger {
-    width: 52px;
-    height: 52px;
-    font-size: 1.6rem;
+    width: 54px;
+    height: 54px;
+    font-size: 1.7rem;
   }
 
   .whatsapp-chat-popup {
+    position: fixed;
     width: calc(100vw - 32px);
-    right: -4px;
-    bottom: 66px;
+    max-width: 340px;
+    right: 16px;
+    bottom: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
   }
 
   .tabs-nav {
